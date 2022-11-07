@@ -81,7 +81,7 @@ You Created. --> Save.
 	
 	# Give Unique Name And S3 Bucket which you created.
 	export NAME=class.k8s.local
-	export KOPS_STATE_STORE=s3://class29v
+	export KOPS_STATE_STORE=s3://chibed3
  
     source .bashrc
 	
@@ -92,7 +92,7 @@ You Created. --> Save.
 
 # 8) Create kubernetes cluster definitions on S3 bucket
 
-	kops create cluster --zones us-east-2c --networking weave --master-size t2.medium --master-count 1 --node-size t2.medium --node-count=2 ${NAME}
+	kops create cluster --zones us-east-2b --networking weave --master-size t2.medium --master-count 1 --node-size t2.medium --node-count=2 ${NAME}
 	
 	kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
 
